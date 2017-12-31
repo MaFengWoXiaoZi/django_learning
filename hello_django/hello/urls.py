@@ -18,5 +18,21 @@ from django.conf.urls import url, include
 from hello import views
 
 urlpatterns = [
-    url('^hello/$', views.hello),
+    url(r'^hello/$', views.hello, {'a': '123'}),
+	url(r'^test/\d{2}/$', 'hello.views.test'),
+	url(r'^test2/(?P<id>\d{2})/$', 'hello.views.test2'),
+	url(r'^test3/(?P<id>\d{2})/(?P<key>\w+)/$', 'hello.views.test3'),
 ]
+
+#urlpatterns = [
+#	url(r'^hello/$', 'hello.views.hello', {'a': '123'})
+#]
+
+# The way is not recommended 
+
+#from django.conf.urls import patterns
+#from hello import views
+#
+#urlpatterns = patterns('',
+#		(r'^hello/$', views.hello),
+#)
