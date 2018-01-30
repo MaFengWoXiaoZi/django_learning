@@ -20,16 +20,16 @@ def hello(request, a):
    # c = {'user_list': user_list}
    # return HttpResponse(t.render(c, request),
    #                     content_type='text/html ')
-
-   # return render(request, 'table.html', {'user_list': user_list})
+   print(user_list.query) # print SQL codes
+   return render(request, 'table.html', {'user_list': user_list})
 
    # response = HttpResponse('Here \'s the text of the Web page')
    # return response
 
    # return render_to_response('table.html', {'user_list': user_list})
 
-   print(locals())
-   return render_to_response('table.html', locals())
+   # print(locals())
+   # return render_to_response('table.html', locals())
 
    # return redirect('/test2/22/')  # redirect to one page
 

@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 """hello_django URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -17,6 +18,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from hello import views
 
+staticmethod
 urlpatterns = [
     url(r'^hello/$', views.hello, {'a': '123'}),
 	url(r'^test/\d{2}/$', 'hello.views.test'),
